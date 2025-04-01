@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Geist+Mono:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Londrina+Sketch&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Pacifico&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik+Vinyl&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+    <title>Document</title>
+    <style>
+        .faq-container {
+            width: 50%;
+            margin: 50px auto;
+            text-align: left;
+        }
+
+        .faq-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .faq-item {
+            width: 700px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 20px 0px rgba(9, 17, 41, 0.16);
+            background: rgb(255, 255, 255);
+            margin-bottom: 16px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            cursor: pointer;
+            color: rgb(37, 48, 80);
+            font-family: "Inter";
+            font-size: 13.23px;
+            font-weight: 900;
+            line-height: 20px;
+            letter-spacing: 0%;
+            text-align: left;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+            padding: 0 15px;
+            background: white;
+            color: rgb(37, 48, 80);
+            font-family: "Inter";
+            font-size: 12.47px;
+            font-weight: 400;
+            line-height: 20px;
+            letter-spacing: 0%;
+            text-align: left;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 10px 15px;
+        }
+
+        .icon {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .icon {
+            transform: rotate(180deg);
+        }
+
+        .active {
+            background-color: blue;
+            color: white;
+            border-radius: 8px;
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <div class="box_postion">
+                <button class="our_tickets">
+                    <img src="/images/Vector (8).svg" alt="">
+                    Park Hours
+                </button>
+                <button class="search">
+                    <img src="/images/Vector (9).svg" alt="">
+                </button>
+                <button class="america">
+                    <img class="img_america" src="/images/Image (70).svg" alt="">
+                </button>
+                <button class="log_in">
+                    <img src="/images/Background (3).svg" alt="">
+                    Log in
+                </button>
+            </div>
+            <div class="box_center">
+                <img class="logo" src="/images/Disneyland Paris.svg" alt="">
+                <ul class="flex_nav">
+                    <li><a class="navs_lis" href="">Our 2 Parks</a></li>
+                    <li><a class="navs_lis" href="">Places to stay</a></li>
+                    <li><a class="navs_lis" href="">Dining</a></li>
+                    <li><a class="navs_lis" href="">Book now</a></li>
+                    <li><a class="navs_lis" href="">Before you arrive</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="bg_head">
+        <div class="wrap_box">
+            <div class="box_abs">
+                <div onclick="scrollToSection()" class="box1">
+                    <img class="icon" src="/images/e0C2__TICKETS_tcm752-245132.svg.svg" alt="">
+                    <p>Our Park Tickets</p>
+                </div>
+                <div onclick="scrollToSection2()" class="box2">
+                    <img class="icon" src="/images/icon_e38d_genie-lamp_black700_32_tcm752-271391.svg.svg" alt="">
+                    <p>Magical extras</p>
+                </div>
+                <div onclick="scrollToSection3()" class="box3">
+                    <img class="icon" src="/images/e302__INFO_tcm752-270009.svg.svg" alt="">
+                    <p>Know before you go</p>
+                </div>
+                <div onclick="scrollToSection4()" class="box4">
+                    <img class="icon" src="/images/e0FD__SPECIAL-OFFERS_tcm752-262166.svg fill.svg" alt="">
+                    <p>Special rate tickets</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="sec1" id="page_one">
+        <div class="container">
+            <h3 class="title">Discover our range of Disney Park tickets!</h3>
+            <p class="pad_tit">Choose the Disney Park ticket that's best for you, whether you want to explore one Disney
+                Park <br>
+                or both.</p>
+            <div class="wrap_buy">
+                <div class="buy_box">
+                    <div class="wrap_dates">
+                        <img src="/images/Image+Background (1).svg" alt="">
+                        <p class="dated_ticket">Dated ticket (1-4 days)</p>
+                    </div>
+                    <div class="liniya_wrap">
+                        <div class="polu_krug"></div>
+                        <hr class="center_liniya">
+                        <div class="polu_krug2"></div>
+                    </div>
+                    <div class="wrap_checks">
+                        <div class="flex_check">
+                            <div class="flex_col">
+                                <img src="/images/Vector (10).svg" alt="">
+                                <p>1 or 2 Parks</p>
+                            </div>
+                            <div class="flex_col">
+                                <img src="/images/Vector (10).svg" alt="">
+                                <p>Cancel up to 3 days before your <br>
+                                    visit date⁽¹⁾</p>
+                            </div>
+                        </div>
+                        <button class="btn">Buy now</button>
+                    </div>
+                </div>
+                <div class="buy_box">
+                    <div class="wrap_dates">
+                        <img src="/images/Image+Background (2).svg" alt="">
+                        <p class="dated_ticket">1-Day undated ticket</p>
+                    </div>
+                    <div class="liniya_wrap">
+                        <div class="polu_krug"></div>
+                        <hr class="center_liniya">
+                        <div class="polu_krug2"></div>
+                    </div>
+                    <div class="wrap_checks2">
+                        <div class="flex_check">
+                            <div class="flex_col">
+                                <img src="/images/Vector (10).svg" alt="">
+                                <p>1 or 2 Parks</p>
+                            </div>
+                            <div class="flex_col">
+                                <img src="/images/Vector (10).svg" alt="">
+                                <p>Valid 1 year from day of purchase <br>
+                                    (except 14 Jul, 31 Oct, 31 Dec)</p>
+                            </div>
+                            <div class="flex_col">
+                                <img src="/images/Vector (10).svg" alt="">
+                                <p>Cannot be cancelled or refunded</p>
+                            </div>
+                            <div class="flex_col">
+                                <img src="/images/Vector (10).svg" alt="">
+                                <p>The ideal gift</p>
+                            </div>
+                        </div>
+                        <button class="btn">Buy now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="sec2">
+        <div class="container">
+            <div class="flex_sec2">
+                <div>
+                    <h3 class="important">Important: 1-Day undated ticket</h3>
+                    <p class="register">You’ll need to register your visit dates in advance (subject to availability) to
+                        <br>
+                        enter the Disney Parks.
+                    </p>
+                    <button class="check_btn">Check availability</button>
+                </div>
+                <img src="/images/Container (1).svg" alt="">
+            </div>
+            <h3 class="top_cards">Why buy your Disney Park tickets directly with Disneyland Paris?</h3>
+            <div class="wrap_cards">
+                <div class="card">
+                    <img src="/images/hd19316_world_commercial-reassurance_flexible-conditions_16-9_tcm752-286331.jpg.svg"
+                        alt="">
+                    <h4 class="card_title">Flexible conditions</h4>
+                    <p class="p_text">Dated tickets can be cancelled up to</p>
+                    <p class="p_text2">3 days before arrival(1), undated <br> tickets are valid for 1 whole year!</p>
+                </div>
+                <div class="card">
+                    <img src="/images/e143__ENTERTAINMENT_world_commercial-reassurance_acces-to-all-the-magic_16-9_tcm752-286334.jpg.svg"
+                        alt="">
+                    <h4 class="card_title">Access to all the magic</h4>
+                    <p class="p_text">Enjoy all our attractions, shows, <br>
+                        Character Encounters, and much <br>
+                        more!</p>
+                </div>
+                <div class="card">
+                    <img src="/images/e278__KIDS_world_commercial-reassurance_special-rates-for-kids_16-9_tcm752-286330.jpg (1).svg"
+                        alt="">
+                    <h4 class="card_title">Special rates for kids</h4>
+                    <p class="p_text">Available for children aged 3 to 11 <br>
+                        years. Under 3's go free!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="sec3">
+        <div class="container">
+            <div class="center_pos">
+                <div class="divs">
+                    <div onclick="showContent('three_cards')" class="block">
+                        <p>Disneyland Park</p>
+                    </div>
+                    <div onclick="showContent('four_cards')" class="block2">
+                        <p>2 Parks experience</p>
+                    </div>
+                    <div onclick="showContent('three_cards2')" class="block3">
+                        <p>Walt Disney Studios Park</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section style="padding-bottom: 56px;">
+        <div id="three_cards" class="content">
+            <h2 class="title_none">Feel the magic of timeless stories and enchanting fairy tales...</h2>
+            <div style="display: flex; align-items: start; justify-content: center; gap: 24px; margin-top: 16px;">
+                <div class="mini_card">
+                    <img class="h_take"
+                        src="/images/n025410_2024jan31_world_big-thunder-mountain-interior-embedded-view_16-9_tcm752-207157$w~288$p~1$f~webp.webp"
+                        alt="">
+                    <h4 class="mini_title">Amazing attractions for <br> all ages</h4>
+                    <p class="mini_p">Travel the globe on a whimsical boat <br> ride, blast off into space on a galactic
+                        <br>
+                        adventure, embark
+                        on swashbuckling <br> escapades in the Caribbean or climb <br> aboard a runaway mine train for a
+                        <br> thrilling
+                        ride around a haunted <br> mountain... and that’s just the <br> beginning!
+                    </p>
+                </div>
+                <div class="mini_card">
+                    <img class="h_take"
+                        src="/images/n031801_2026jul07_world_the-lion-king-festival-jungle-book-jive-show-mickey-miss-bunny-king-louie-goofy_16-9_tcm752-198900$w~288$p~1$f~webp.webp"
+                        alt="">
+                    <h4 class="mini_title">Spectacular shows and an <br> iconic parade</h4>
+                    <p class="mini_p">Don’t miss the roaring The Lion King: <br> Rhythms of the Pride Lands show, <br>
+                        admire Disney
+                        Characters
+                        on their <br> colourful floats during the world- <br>famous Disney Stars on Parade and <br> end
+                        your day with a
+                        dazzling <br> nighttime extravaganza in front of <br> Sleeping Beauty Castle!
+                    </p>
+                </div>
+                <div class="mini_card">
+                    <img class="h_take"
+                        src="/images/n025563_2025mar17_world_beauty-shots-star-tours-the-adventure-continue-darth-vader_16-9_tcm752-258489$w~288$p~1$f~webp.webp"
+                        alt="">
+                    <h4 class="mini_title">Meet classic Disney <br> Characters</h4>
+                    <p class="mini_p">Share a hug or a wave with Mickey, <br> Minnie and their friends, capture a <br>
+                        picture-perfect moment
+                        with a Disney <br> Princess Character, or feel the Force <br> with Star Warsᵀᴹ legends...
+                        beloved <br>
+                        Characters are waiting to spend an <br> unforgettable moment with you!
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div id="four_cards" class="content" style="display: none;">
+            <h2 class="title_none">Embrace the full Disney experience with a 2-Park ticket!</h2>
+            <div style="display: flex; align-items: start; justify-content: center; gap: 24px;">
+                <div>
+                    <img src="/images/n026544_2024Jun14_world_big-thunder-mountain-frontierland-panoramic-view_16-9_tcm752-208063.jpg.svg"
+                        alt="">
+                    <h4 class="mini_title">Explore diverse worlds, <br>
+                        from the Far West to <br>
+                        galaxies far, far away...</h4>
+                </div>
+                <div>
+                    <img src="/images/N033810_2027jun24_world_star-wars-hyperspace-mountain-entry_16-9_tcm752-236677.jpg.svg"
+                        alt="">
+                    <h4 class="mini_title">Enjoy iconic attractions <br>
+                        for all ages, from family <br>
+                        adventures to big thrills</h4>
+                </div>
+                <div>
+                    <img src="/images/n038609_2025jul10_world_marvel-avengers-campus-spider-man-meet-and-greet-girl_16-9_tcm752-245171.jpg.svg"
+                        alt="">
+                    <h4 class="mini_title">Meet Characters from <br>
+                        Disney, Pixar, MARVEL and <br>
+                        Star Wars™</h4>
+                </div>
+                <div>
+                    <img src="/images/n027586_2024dec18_world_disney-stars-on-parade-discover-friendship-car-woody-zig-zag_16-9_tcm752-190535.jpg.svg"
+                        alt="">
+                    <h4 class="mini_title">Catch our spectacular <br>
+                        shows and iconic daytime <br>
+                        parade</h4>
+                </div>
+            </div>
+        </div>
+        <div id="three_cards2" class="content" style="display: none;">
+            <h2 class="title_none">Live iconic Disney stories, playful Pixar tales and epic MARVEL adventures</h2>
+            <div style="display: flex; align-items: start; justify-content: center; gap: 24px; margin-top: 16px;">
+                <div class="mini_card">
+                    <img class="h_take"
+                        src="/images/n038457_2027jul05_world_marvel-avengers-campus-avengers-assemble-flight-force-attraction_1280x720_tcm752-270015$w~288$p~1$f~webp.webp"
+                        alt="">
+                    <h4 class="mini_title">Thrilling attractions and <br> fun family adventures</h4>
+                    <p class="mini_p">Team up with Iron Man and Captain <br> Marvel to help them save the world <br>
+                        from an
+                        intergalactic threat, sling <br> your own webs alongside Spider-Man, <br> dive into the the
+                        worlds of Toy
+                        Story, <br> Finding Nemo, Ratatouille and Cars, <br> and plummet 13 floors in an old <br>
+                        elevator at the
+                        Hollywood Tower <br> Hotel!
+                    </p>
+                </div>
+                <div class="mini_card">
+                    <img class="h_take"
+                        src="/images/n024300_2030jun29_world_mickey-and-the-magician-show_1280x720_tcm752-271812$w~288$p~1$f~webp.webp"
+                        alt="">
+                    <h4 class="mini_title">Breathtaking shows: on <br> stage... and the rooftops!</h4>
+                    <p class="mini_p">Join Mickey for an enchanting show <br> bursting with spellbinding illusions, <br>
+                        embark on
+                        an immersive musical <br> journey with pals from Toy Story, <br> Monsters Inc. and Finding Nemo,
+                        <br> catch an
+                        epic rooftop battle with <br> MARVEL Super Heroes, and don't <br> miss our interactive
+                        experiences with <br>
+                        Minnie and Stitch!
+                    </p>
+                </div>
+                <div class="mini_card">
+                    <img class="h_take"
+                        src="/images/n034285_2026sep03_world_selfies-spot-olaf_16-9_tcm752-239742$w~288$p~1$f~webp.webp"
+                        alt="">
+                    <h4 class="mini_title">Unforgettable Character <br> Encounters</h4>
+                    <p class="mini_p">Perfect your action stance during a <br> Heroic Encounter or get ready for a <br>
+                        training
+                        session with Spider-Man at <br> the Hero Training Center. Share a <br> heart-melting moment with
+                        Olaf, a <br>
+                        fun-filled snap with Goofy, or a <br> moment with the bravest cowgirl of <br> them all, Jessie,
+                        or one of
+                        her many <br> friends! Yee-haw!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="sec4" id="page_two">
+        <div class="container">
+            <div style="display: flex; justify-content: center;">
+                <img src="/images/separator-genie-lamp-desktop_tcm752-285979.svg.svg" alt="">
+            </div>
+            <h2 class="title_mone">Enhance your trip with magical extras!</h2>
+            <p class="discover">Discover how to boost your visit and create even more incredible memories with these
+                paid <br>
+                options.</p>
+            <div class="wcards">
+                <div style="display: flex; flex-direction: column; gap: 16px;">
+                    <div class="wcard">
+                        <img style="border-radius: 16px;" src="/images/Image+Background (3).svg" alt="">
+                        <div class="flex_right">
+                            <h4 class="w_title">Disney Premier Access <br>
+                                Ultimate</h4>
+                            <p class="w_p">Overtake the regular queue one time <br>
+                                for all eligible attractions (except <br>
+                                Orbitron)!</p>
+                            <button class="btn_none">Find out more</button>
+                        </div>
+                    </div>
+                    <div class="wcard">
+                        <img style="border-radius: 16px;" src="/images/Container (2).svg" alt="">
+                        <div class="flex_right">
+                            <h4 class="w_title">Guaranteed access⁽⁴⁾ to <br>
+                                our shows</h4>
+                            <p class="w_p">Buy yourself peace of mind and <br>
+                                guarantee your access in advance​ for <br>
+                                certain shows!</p>
+                            <button class="btn_none">Find out more</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="wcard">
+                    <img style="border-radius: 16px;" src="/images/Image+Background (4).svg" alt="">
+                    <div class="flex_right">
+                        <h4 class="w_title">Reserved viewing <br>
+                            area⁽³⁾</h4>
+                        <p class="w_p">Enjoy a breathtaking view of Disney <br>
+                            Stars on Parade and our nighttime <br>
+                            spectacular!</p>
+                        <button class="btn_none">Find out more</button>
+                    </div>
+                </div>
+            </div>
+            <div style="display: flex; justify-content: center;">
+                <img src="/images/separator-info-desktop_tcm752-285980.svg.svg" alt="">
+            </div>
+            <h2 class="title_know">Know before you go</h2>
+            <div id="page_three" class="flex_cart">
+                <div class="cart">
+                    <img src="/images/0000__PARKS-CLOSED_no-buying-ticket-gate_purple-on-white_16-9-1280_720_tcm752-270031.jpg.svg"
+                        alt="">
+                    <h2 class="tite_cart">Buy your Disney Park <br>
+                        tickets in advance!</h2>
+                    <p class="p_cart">Disney Park tickets cannot be <br> purchased at the entrance to the <br> Disney
+                        Parks, except in certain
+                        cases. <br> See details and prices here.
+                    </p>
+                </div>
+                <div class="cart">
+                    <img src="/images/e109__LINK-EXISTING-RESERVATION_purple-on-white_16-9-1280_720_tcm752-270033.jpg.svg"
+                        alt="">
+                    <h2 class="tite_cart">Download our official app</h2>
+                    <p class="p_cart">Book a table, buy Disney Premier <br>
+                        Access, enter the Disney Parks on the <br>
+                        day, and more!
+                    </p>
+                </div>
+            </div>
+            <div style="display: flex; justify-content: center;">
+                <img src="/images/separator-special-offer-desktop_tcm752-285988.svg.svg" alt="">
+            </div>
+            <h2 class="special_title">Discover our special rates</h2>
+            <div id="page_four" class="flex_ld">
+                <div class="ld">
+                    <img src="/images/Image (71).svg" alt="">
+                    <div>
+                        <p class="p_first">Active or retired military personnel can enjoy a ticket discount by
+                            presenting <br>
+                            official proof of service issued by the French, U.K., or U.S. government.</p>
+                        <button class="find_btn">Find out more</button>
+                    </div>
+                </div>
+                <div class="ld">
+                    <div>
+                        <h4 class="second_h">NEW! Now purchase special-rate tickets for <br>
+                            Guests with disabilities online</h4>
+                        <p class="p_first2">Starting from 19 November 2024, purchase your special-rate tickets online.​
+                            <br>
+                            Guests with disabilities can enjoy a 25% reduction on the price of a Disney Park <br>
+                            ticket booked online for themselves and one accompanying Guest, subject to <br>
+                            the presentation of ​official proof of disability at the ticket counters on the day.
+                        </p>
+                        <button class="find_btn">Find out more</button>
+                    </div>
+                    <img src="/images/Image (72).svg" alt="">
+                </div>
+            </div>
+            <div style="display: flex; justify-content: center;">
+                <img src="/images/Component 1.svg" alt="">
+            </div>
+            <h2 class="special_title">Make the magic last around the clock!</h2>
+            <div class="ld2">
+                <div>
+                    <h4 class="second_h">Discover our themed Disney Hotels</h4>
+                    <p class="p_first2">Book a Disney Hotel + Tickets package and enjoy exclusive advantages... <br>
+                        Character Encounters, free parking and even enter the Disney Parks before the <br>
+                        official opening times!</p>
+                    <button class="find_btn">Find out more</button>
+                </div>
+                <img src="/images/Container (3).svg" alt="">
+            </div>
+        </div>
+    </section>
+    <section class="sec5">
+        <div class="container">
+            <h2 class="title">Your questions... answered!</h2>
+            <div class="faq-container">
+                <div class="faq-item" onclick="toggleAnswer(this)">
+                    <div class="faq-question">
+                        <span>Can I buy Disney Park tickets at the entrance of the Disney Parks?</span>
+                        <span class="icon"><img src="/images/Vector (11).svg" alt=""></span>
+                    </div>
+                    <div class="faq-answer">Disney Park tickets cannot be purchased at the entrance to the Disney Parks,
+                        except in certain cases. See details and prices here. <br><br>
+
+                        ​Tickets can be purchased directly at the entrance to the Disney Parks only when paying with
+                        holiday vouchers, gift cards or cash and provided that the Disney Parks have not reached maximum
+                        capacity for the day of your visit. Guests who arrive at the entrance to the Disney Parks
+                        without a valid ticket purchased in advance may be denied access if the maximum capacity has
+                        been reached. The maximum capacity is based on the number of visitors that the Disney Parks can
+                        accommodate while maintaining satisfactory conditions. This limit depends on factors such as the
+                        number of attractions available and the Park opening times on the day, in order to ensure the
+                        best possible experience for all our Guests.
+                    </div>
+                </div>
+                <div class="faq-item" onclick="toggleAnswer(this)">
+                    <div class="faq-question">
+                        <span>Do I need to register my visit dates before my visit?</span>
+                        <span class="icon"><img src="/images/Vector (11).svg" alt=""></span>
+                    </div>
+                    <div class="faq-answer">If you purchase an undated Disney Park ticket you must register your visit
+                        date in advance to enter the Disney Parks on the date of your choice.</div>
+                </div>
+                <div class="faq-item" onclick="toggleAnswer(this)">
+                    <div class="faq-question">
+                        <span>Which methods of payment are accepted at Disneyland Paris?</span>
+                        <span class="icon"><img src="/images/Vector (11).svg" alt=""></span>
+                    </div>
+                    <div class="faq-answer">For more information about payments, please visit our page dedicated to
+                        paying for your trip to Disneyland Paris online.
+                    </div>
+                </div>
+            </div>
+            <h2 class="title">Conditions</h2>
+            <div class="faq-container">
+                <div class="faq-item" onclick="toggleAnswer(this)">
+                    <div class="faq-question">
+                        <span>(1) What are the exchange and refund conditions for Dated tickets 1-4 days?</span>
+                        <span class="icon"><img src="/images/Vector (11).svg" alt=""></span>
+                    </div>
+                    <div class="faq-answer">Dated tickets 1-4 days can be cancelled and refunded up to 3 days before
+                        your chosen date (including the day of arrival, for example, if you have a ticket for 4 June,
+                        you have until midnight on 1 June to cancel). <br><br>
+
+                        You can cancel your ticket online directly from the "My Bookings" section in your Disney
+                        Account. <br><br>
+
+                        If we specified that your booking can only be cancelled by email, you must send your names,
+                        8-digit booking reference, visit date, a photo of your tickets (with the barcode clearly
+                        visible) or your PDF ticket, to the following address: refund.ticket@disneylandparis.com. We
+                        will refund your tickets as soon as possible, via the same payment method used at the moment of
+                        booking. If you would like to change your visit date, you must cancel your existing tickets and
+                        purchase new tickets for a different visit date (subject to availability when booking). It is
+                        not possible to change your visit date by e-mail.
+                    </div>
+                </div>
+                <div class="faq-item" onclick="toggleAnswer(this)">
+                    <div class="faq-question">
+                        <span>(3) Reserved viewing area conditions</span>
+                        <span class="icon"><img src="/images/Vector (11).svg" alt=""></span>
+                    </div>
+                    <div class="faq-answer">With reserved viewing area, you can enjoy the show or parade from a
+                        dedicated zone at the selected date and time, unless it is impossible for the show or parade to
+                        take place. This paid option is limited in quantity and subject to availability. ​<br><br>
+
+                        ​In unforeseen circumstances, such as poor weather conditions or technical issues, our shows and
+                        parade may be modified or cancelled without prior notice.​</div>
+                </div>
+                <div class="faq-item" onclick="toggleAnswer(this)">
+                    <div class="faq-question">
+                        <span>(4) Guaranteed access conditions</span>
+                        <span class="icon"><img src="/images/Vector (11).svg" alt=""></span>
+                    </div>
+                    <div class="faq-answer">Paid service, subject to availability. With guaranteed access, you can
+                        attend the show at the selected time, unless for any reason the show is cancelled, for example
+                        due to poor weather conditions.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="sec6">
+        <div class="container">
+            <div class="last_flex">
+                <img src="/images/co-logo_visa-x-DLP_partner-dlp_250x83_frame-partner_MOP_UK_tcm752-285601.svg fill.svg"
+                    alt="">
+                <div>
+                    <div style="display: flex; align-items: center; gap: 13px;">
+                        <img src="/images/Vector (12).svg" alt="">
+                        <p class="accepted">Accepted Payment methods</p>
+                    </div>
+                    <p class="plastic_cards">Visa, Mastercard, PayPal, American Express, Diners Club, Discover, JCB,
+                        UnionPay. <br>
+                        Any payment card associated with one of the above networks is accepted. We invite you to check
+                        if these networks are mentioned on your payment <br>
+
+                        card.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        function showContent(tab) {
+            document.querySelectorAll('.content').forEach(div => {
+                div.style.display = 'none';
+            });
+
+            document.getElementById(tab).style.display = 'block';
+
+            document.querySelectorAll('.block, .block2, .block3').forEach(block => {
+                block.classList.remove('active');
+            });
+
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+    <script>
+        function toggleAnswer(element) {
+            element.classList.toggle('active');
+        }
+    </script>
+    <script>
+        function scrollToSection() {
+            document.getElementById("page_one").scrollIntoView({ behavior: "smooth" });
+        }
+
+        function scrollToSection2() {
+            document.getElementById("page_two").scrollIntoView({ behavior: "smooth" });
+        }
+
+        function scrollToSection3() {
+            document.getElementById("page_three").scrollIntoView({ behavior: "smooth" });
+        }
+
+        function scrollToSection4() {
+            document.getElementById("page_four").scrollIntoView({ behavior: "smooth" });
+        }
+    </script>
+
+
+</body>
+
+</html>
